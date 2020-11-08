@@ -3,7 +3,8 @@ import subprocess
 import optparse
 import re
 import os
-
+os.system("clear")
+os.system("figlet KARABAGH  IS AZERBAIJAN")
 try:
     def paraser():
         parse_obj = optparse.OptionParser()
