@@ -14,13 +14,13 @@ try:
 
 
     def change(user_interface, user_mac_address):
-        subprocess.call(["sudo", "ifconfig", user_interface, "down"])
-        subprocess.call(["sudo", "ifconfig", user_interface, "hw", "ether", user_mac_address])
-        subprocess.call(["sudo", "ifconfig", user_interface, "up"])
+        subprocess.call(["ifconfig", user_interface, "down"])
+        subprocess.call(["ifconfig", user_interface, "hw", "ether", user_mac_address])
+        subprocess.call(["ifconfig", user_interface, "up"])
 
 
     def control_mac(new_interface):
-        ifconfig = subprocess.check_output(["sudo", "ifconfig", new_interface])
+        ifconfig = subprocess.check_output(["ifconfig", new_interface])
         new_mac = re.search(r"\w\w:\w\w:\w\w:\w\w:\w\w:\w\w", str(ifconfig))
         print(new_mac.group(0))
 
@@ -36,7 +36,8 @@ try:
     new_mac_control = control_mac(str(user_inputs.interface))
 
     if new_mac_control.group(0) == user_inputs.interface:
-        os.system("sudo ifconfig")
+        os.system("
+                  ifconfig")
         print("\nPoseydons says: 'Karabagh is AZERBAIJAN'")
 
 
