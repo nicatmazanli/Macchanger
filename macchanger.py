@@ -36,8 +36,7 @@ try:
     new_mac_control = control_mac(str(user_inputs.interface))
 
     if new_mac_control.group(0) == user_inputs.interface:
-        os.system("
-                  ifconfig")
+        os.system("ifconfig")
         print("\nPoseydons says: 'Karabagh is AZERBAIJAN'")
 
 
